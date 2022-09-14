@@ -1,0 +1,6 @@
+@charset "UTF-8";
+/* 선택자 { 속성:값; } 
+   선택자가 style태그 위에 있으면 적용이 어려우나 아래에 적용되면 css 파일의 선택자가 적용된다.
+*/
+* { margin:0; padding: 0; }
+#hd1 { background-color: purple; }
