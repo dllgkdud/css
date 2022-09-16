@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css4 - 의사(pseudo) 선택자</title>
+    <style>
+    /* 링크 선택자 */
+    /* a:link : a 요소에 href 속성이 있는 요소 선택 */
+    a:link { color: darkkhaki; }
+    /* a:visited - a 요소에 href 속성에 기재된 url이 방문한 적 있는 경우 */
+    a:visited { color: black; }
+    /* :hover - 해당 요소에 마우스 포인터를 올려 놓은 요소를 선택 */
+    a:hover { background-color: gold; }
+    /* :active - 해당 요소에 마우스 포인터를 올리고, 버튼을 누르고 있는 요소 선택 */
+    a:active { background-color: blue; color: white; }
+ 
+    /* 폼 컨트롤에서 사용하는 선택자 */
+    /* :focus - 입력 컨트롤에 커서가 위치한 요소를 선택 */
+    input:focus { background-color: aqua; }
+    /* :enabled - 사용 가능한 입력 컨트롤을 선택 (데이터 전송 가능) */
+    input:enabled { color: #c18; }
+    /* :disabled - 사용 불가능한 입력 컨트롤을 선택 (데이터 전송 불가능) */
+    input:disabled { color: red; }
+    /* :checked - 체크박스나 라디오 버튼에서 체크가 된 요소를 선택 (따로 스타일 부여는 안된다.) */
+    input:not(:checked) + span { color: purple; }   /* 부정 연산자 */
+    input:checked + span {color: lightblue;}
+    
+    /* 가상 선택자 */
+    /* ::first-letter - 첫 글자를 선택 */
+    #con3 p::first-letter { font-size: 100px; }
+    /* ::first-line - 첫 줄을 선택 */
+    #con3 p::first-line { color: red;}
+    /* ::selection - 마우스를 글자 범위 내 지정한 만큼 선택 */
+    #con3 p::selection { background-color: yellow; }
+    /* ::before - 해당 요소의 앞을 선택 (검사해도 선택되지 않는다.) */
+    #con3 h3::before { content: "<"; font-size: 30px; }
+    /* ::after - 해당 요소의 뒤를 선택 */
+    #con3 h3::after { content: ">"; font-size: 30px; }
+
+    /* :target - a 요소에 의해 타겟된 요소 선택 */
+    .page { display: none; }
+    .page :target { display: block; }
+    </style>
+</head>
+<body>
+    <div class="wrap" id="con1">
+        <a href="https://www.naver.com">링크1</a>
+        <a href="https://okgunyang.co.kr">링크2</a>
+        <a>링크3</a>
+        <a href="#page1">링크4</a>
+        <a href="#page2">링크5</a>
+    </div>
+    <div class="wrap" id="con2">
+        <form>
+            아이디: <input type="text" name="id"><br><br>
+            비밀번호: <input type="text" name="pw"><br><br>
+            이름: <input type="text" name="name"><br><br>
+            전화번호: <input type="text" name="tel" disabled value="010-1111-2222"><br><br>
+            <input type="radio" name="male" value="1" id="male1" checked><span>남성</span>
+            <input type="radio" name="male" value="2" id="male2"><span>여성</span>
+        </form>
+    </div>
+    <div class="wrap">
+        <h3>to-do list</h3>
+        <p>진도나간 sql, java, html 복습과 java 과제 (확인문제)를 하고, oracle sqlplus 문제를 복기하면서 그동안 놓쳤던 수업 내용을 기억해야지~!
+        오늘은 금요일이니 아르바이트를 하며, 지난번처럼 외운 내용을 적어보고 수기로 작성된 복습 파일을 기억해보는 연습을 한 뒤 집에서 밤을 조금 새더라도 부족한 부분을 매꿔야겠다.</p>
+    </div>
+    <div id="page" id="page1" sytle="height: 100px; background-color: darkcyan;">
+        page1</div>
+    <div id="page" id="page2" sytle="height: 100px; background-color: skyblue;">
+        page2</div>
+</body>
+</html>
