@@ -25,13 +25,13 @@
     input:disabled { color: red; }
     /* :checked - 체크박스나 라디오 버튼에서 체크가 된 요소를 선택 (따로 스타일 부여는 안된다.) */
     input:not(:checked) + span { color: purple; }   /* 부정 연산자 */
-    input:checked + span {color: lightblue;}
+    input:checked + span { color: lightblue; }
     
     /* 가상 선택자 */
     /* ::first-letter - 첫 글자를 선택 */
     #con3 p::first-letter { font-size: 100px; }
     /* ::first-line - 첫 줄을 선택 */
-    #con3 p::first-line { color: red;}
+    #con3 p::first-line { color: red; }
     /* ::selection - 마우스를 글자 범위 내 지정한 만큼 선택 */
     #con3 p::selection { background-color: yellow; }
     /* ::before - 해당 요소의 앞을 선택 (검사해도 선택되지 않는다.) */
@@ -55,11 +55,13 @@
     <div class="wrap" id="con2">
         <form>
             아이디: <input type="text" name="id"><br><br>
-            비밀번호: <input type="text" name="pw"><br><br>
+            비밀번호: <input type="password" name="pw"><br><br>
             이름: <input type="text" name="name"><br><br>
             전화번호: <input type="text" name="tel" disabled value="010-1111-2222"><br><br>
-            <input type="radio" name="male" value="1" id="male1" checked><span>남성</span>
-            <input type="radio" name="male" value="2" id="male2"><span>여성</span>
+            <input type="radio" name="male" value="1" id="male1" checked>
+            <span>남성</span>
+            <input type="radio" name="male" value="2" id="male2">
+            <span>여성</span>
         </form>
     </div>
     <div class="wrap">
