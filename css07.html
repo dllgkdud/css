@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>css7 - display, box</title>
+    <style>
+    /* block 방식: 한 줄에 하나의 요소만 표시되고, 크기(width, height, line-height, text-align,
+    margin-top, margin-bottom, padding-top, padding-bottom) 방식의 지정이 가능 */
+    /* inline 방식: 한 줄에 여러 개의 요소가 표시되고, 크기를 지정할 수 없다. 다만 img, video 요소는 지정 가능.
+    span, a, strong, em, ins, input */
+    /* inline-block 방식: 한 줄에 여러 개 요소가 표시되고, 크기 지정도 가능하다. */
+    /* display: block | inline | inline-block | none(출력 자체를 취소) - 표시속성 */
+        /* table, table-row, table-cell - table 태그를 body에서 설정하지 않고 style에서 설정할 때 사용 */
+        /* flex, grid - 반응형 관련 */
+    /* visibility: visible | hidden - 가시속성 */
+    /* opacity: 0~1 까지의 실수 - 불투명도 */
+    /* overflow - visiable | auto(흘러넘칠 때만 생성) | scroll(흘러넘치지 않아도 생성) |
+    hidden(넘치면 숨김)- 흘러넘침 속성 */
+
+    /* 박스의 크기속성 */
+    /* width: px | % | em | vh | vw 단위 숫자 - 너비(폭) 지정 */
+    /* height: px | % | em | vh | vw 단위 숫자 - 높이 지정 */
+        /* width 또는 height 중 auto 설정은 한 곳만 지정 가능 */
+    /* margin: 상/우/하/좌, 상/하 좌/우, 상 우 하 좌 - 바깥여백 */
+        /* margin-top, margin-right, margin-bottom, margin-left */
+    /* border: content 영역을 감싸는 외각선 설정 => outline
+    border-width: px | pt - 선두께
+    border-style: solid | dotted | dashed | double | hidden | groove | inset | outset - 선종류
+    border-color: 컬러명 | #16진코드(6) | #16진코드(3) | rgb | rgba | hsl | hsla - 선색상
+    border-top | border-right | border-bottom | border-left - 각 위치별 두께, 종류, 색상을 제각각 지정 */
+    /* border-radius : 전체, 상좌 하우 / 상우 하좌, 상좌 상우 하우 하좌 - 모서리를 둥글게 */
+    /* padding: 상/우/하/좌, 상/하 좌/우, 상 우 하 좌 - 안여백 */
+        /* padding-top, padding-right, padding-bottom, padding-left */
+    /* 통합속성을 항상 먼저 작성 후 세부속성을 작성해야한다.
+    { margin 100px; margin top 20px; } */
+    /* box-shadow: x | y | blur | color - 박스그림자 */
+    /* box-sizing:  */
+
+    .box { display: inline-block; background-color: lightcoral; }
+    #box1 { display: block; margin-top: 30px; margin-bottom: 30px; text-align: center; line-height: 20px; }
+    #box2 { display: inline; margin: 50px; }
+    #box3 { width: 100px; height: 50px; opacity: 0.5; }
+    #box4 { display: none; }
+    #box6 { visibility: hidden; }
+    #box7 { width: 100px; height: 100px; overflow-x: hidden; overflow-y: auto; box-shadow: #555 5px 5px 5px;}
+    #box8 { width: 100px; height: 100px; margin: 20px 30px 40px; }
+    .data { display: block; }
+
+    #data1 { width: 100px; height: 50px; border: 3px solid gray; border-style: inset;}
+    #data2 { width: 100px; height: 50px; border-top: 3px dotted blue; border-right: 3px double red;
+    border-bottom: 3px dotted blue; border-left: 3px double red;}
+    #data3 { width: 100px; height: 50px; border: 3px solid pink; border-radius: 30px;}
+    #data4 { width: 100px; height: 50px; border: 3px solid blueviolet; border-radius: 20px 70px; }
+    #data5 { width: 100px; height: 50px; border: 3px solid green; border-top-left-radius: 80px; }
+    #data6 { width: 100px; height: 100px; border: 3px solid wheat; border-radius: 53px; }
+    #data7 { width: 100px; height: 100px; border: 3px solid paleturquoise; border-radius: 50%; }
+    #data8 { width: 100px; height: 50px; border: 3px solid coral; box-sizing: border-box; }
+    #data9 { width: 100px; height: 50px; border: 3px solid crimson; box-sizing: content-box; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box" id="box1">박스1</div>
+        <div class="box" id="box2">박스2</div>
+        <div class="box" id="box3">박스3</div>
+        <div class="box" id="box4">박스4</div>
+        <div class="box" id="box5">박스5</div>
+        <div class="box" id="box6">박스6</div>
+        <div class="box" id="box7">박스7-------------------------------------------
+        ---------------------------------------------------------------------------
+        ---------------------------------------------------------------------------
+        </div>
+        <div class="box" id="box8">박스8</div>
+        <div class="box" id="box9">박스9</div>
+        <div class="box" id="box10">박스10</div>
+    </div>
+    <br>
+    
+    <br>
+    <div class="wrap">
+        <span class="data" id="data1">데이터1</span>
+        <span class="data" id="data2">데이터2</span>
+        <span class="data" id="data3">데이터3</span>
+        <span class="data" id="data4">데이터4</span>
+        <span class="data" id="data5">데이터5</span>
+        <span class="data" id="data6">데이터6</span>
+        <span class="data" id="data7">데이터7</span>
+        <span class="data" id="data8">데이터8 - border</span>
+        <span class="data" id="data9">데이터9 - content</span>
+        <span class="data" id="data10">데이터10</span>
+    </div>
+</body>
+</html>

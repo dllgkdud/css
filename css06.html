@@ -45,6 +45,19 @@
     /* font-family: 'Noto Sans KR', sans-serif; */
     #txt4 { word-wrap: break-word; word-break: break-all; font-family: Verdana, Geneva, Tahoma, sans-serif; 
     font-family: "폰트1", sans-serif; font-family: 'Noto Sans KR', sans-serif; }
+
+    /* 줄임말 처리: width, text-overflow(글자숨김), white-space(한 줄로 표시), overflow(지정 크기보다 많은 내용 숨기기/표시/스크롤바) - 모두 사용(순서 무관) */
+    /* -webkit-line-climp: 숫자; 숫자만큼의 줄로 줄임 */
+    #txt5 { width: 800px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    #txt6 { width: 800px; overflow: hidden; white-space: normal; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    </style>
+    <link rel="stylesheet" href="fonts.css">
+    <style>
+    /* @import url("fonts.css"); 링크로 끌어오거나 스타일 sheet 안에서 태그하는 방법 중 하나 사용 */
+    #txt8 { font-family: "ntg", sans-serif; font-size: 80px; }
+    #txt9 { font-size: 80px; font-family: Verdana, sans-serif; }
+
+    
     </style>
 </head>
 <body>
@@ -54,9 +67,16 @@
         <p class="txt" id="txt3">문단 및 글자 모양3 문단 및 글자 모양3 문단 및 글자 모양3 문단 및 글자 모양3 문단 및 글자 모양3 
         문단 및 글자 모양3 문단 및 글자 모양3 문단 및 글자 모양3 문단 및 글자 모양3 문단 및 글자 모양3</p>
         <p class="txt" id="txt4">문단 및 글자 모양4 - font style text paragraph font style text paragraph font style text paragraph 
-        font style text paragraph font style text paragraph font style text paragraph font style text paragraph </p>
-        <p class="txt" id="txt5">문단 및 글자 모양5</p>
-        <p class="txt" id="txt6">문단 및 글자 모양6</p>
+        font style text paragraph font style text paragraph font style text paragraph font style text paragraph font style text paragraph
+        font style text paragraph font style text paragraph font style text paragraph font style text paragraph font style text paragraph</p>
+        <p class="txt" id="txt5">문단 및 글자 모양5 - overflow text overflow text overflow text overflow text overflow text overflow text
+        overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow
+        text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text 
+        overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow</p>
+        <p class="txt" id="txt6">문단 및 글자 모양6 - overflow text overflow text overflow text overflow text overflow text overflow text
+        overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow
+        text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text 
+        overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow text overflow</p>
         <p class="txt" id="txt7">문단 및 글자 모양7</p>
         <p class="txt" id="txt8">문단 및 글자 모양8</p>
         <p class="txt" id="txt9">문단 및 글자 모양9</p>
